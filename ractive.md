@@ -1,5 +1,5 @@
 ## Avoid call `ractive.set` many times
-Each time `ractive.set` is called, template is render again. So it is bad for performance if `ractive.set` is called many times.
+Each time `ractive.set` is called, template will render. So it is bad for performance if `ractive.set` is called many times.
 ```
 // Bad: view.set is called 3 times
 view.set('keypath1', value1);
