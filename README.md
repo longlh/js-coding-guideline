@@ -1,3 +1,5 @@
+Read more about [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
+
 # Declare `hash object`, `array`
  - Always use line-breaks
  - Always have `,` at end of each key-value pair/array element
