@@ -39,3 +39,19 @@ component({
 	}
 });
 ```
+
+## Import components
+`services/component` return a promise, so it is good to use `async-object` to import multiple components
+```
+view({
+	template: 'app-form',
+	ractive: asyncObject({
+		DatePicker: require('../components/date-picker'),
+		TimePicker: require('../components/time-picker'),
+	}).then(function(componentDef) {
+		return {
+			components: componentDef,
+		};
+	}),
+});
+```
