@@ -75,3 +75,21 @@ view({
 	}),
 });
 ```
+
+## Teardown
+On `teardown` event, free all pointers and de-register all event listener
+```
+function handleClick() {
+	// do some logic here
+}
+
+function(node) {
+	node.addEventListener('click', handleClick);
+	
+	return {
+		teardown: function() {
+			node.removeEventListener('click', handleClick);
+		},
+	};
+}
+```
