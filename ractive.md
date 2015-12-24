@@ -1,3 +1,19 @@
+## Avoid call `ractive.set` many times
+Each time `ractive.set` is called, template is render again. So it is bad for performance if `ractive.set` is called many times.
+```
+// Bad: view.set is called 3 times
+view.set('keypath1', value1);
+view.set('keypath2, value2);
+view.set('keypath3, value3);
+
+// Good: view.set is called only 1 time
+view.set({
+	keypath1: value1,
+	keypath2: value2,
+	keypath3: value3,
+});
+```
+
 ## Components
 - Handle event only in `onrender`
 - Dynamic values should be passed by template
@@ -40,7 +56,7 @@ component({
 });
 ```
 
-## Import components
+## Require components
 `services/component` return a promise, so it is good to use `async-object` to import multiple components
 ```
 view({
