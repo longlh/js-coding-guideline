@@ -83,6 +83,7 @@ function handleClick() {
 	// do some logic here
 }
 
+// declare a sample decorator
 function(node) {
 	node.addEventListener('click', handleClick);
 	
