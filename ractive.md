@@ -18,6 +18,7 @@ view.set({
 - Handle event only in `onrender`
 - Dynamic values should be passed by template
 - Internal values and methods should be initialized in `ractiveOptions`
+- Methods should be independencied with outside scope
 - Always set `isolated: true` if possible
 
 ```
@@ -28,13 +29,16 @@ component({
 		onrender: function() {
 			var date = new Date();
 			
+			// Bad: declare method in `onrender`
 			this.selectDate = function(utc) {
+				// Bad: use outside-scope variables
 				date.setTime(utc);
 			};
 			
+			// Bad: set internal method in `onrender`
 			this.set('date', date);
 		},
-	},
+	}, // Bad: not set isolated = true
 });
 
 // Good
@@ -43,11 +47,11 @@ component({
 	ractive: {
 		isolated: true, // set isolated = true
 		selectDate: function(utc) {
-			// isolate scope, do not use out-scope variable
+			// isolated scope, do not use outside-scope variables
 			this.get('date').setTime(utc);
 		},
 		data: function() {
-			// internal value initialized here
+			// internal values initialized here
 			return {
 				date: new Date(),
 			};
