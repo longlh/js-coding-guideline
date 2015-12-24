@@ -21,7 +21,7 @@ functionCall({
 ]);
 ```
 
-# Promise for async code: Bluebird library
+# Promise for async code: `bluebird` library
 
 ## Wrapping
 ```
@@ -119,9 +119,9 @@ asyncObject({
 });
 ```
 
-## `require` usage:
+## `require` usage
  - In server-side, `require` is built-in with NodeJS
- - In client-side, `require` is supported by [Browserify](http://browserify.org/)
+ - In client-side, `require` is provided by [Browserify](http://browserify.org/)
  - `require` is *synchronized*
  - group required dependencies by:
 	+ third-party packages
