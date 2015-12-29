@@ -3,6 +3,7 @@ Read more about [Google JavaScript Style Guide](https://google.github.io/stylegu
 # Declare `hash object`, `array`
  - Always use line-breaks
  - Always have `,` at end of each key-value pair/array element
+ 
 ```
 var hash = {
 	key1: value1,
