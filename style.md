@@ -38,6 +38,7 @@ new Bluebird(function(resolve, reject) {
 ```
 
 **Sugar methods**
+
 ```
 Bluebird.resolve(value);
 
@@ -47,6 +48,7 @@ new Bluebird(function(resolve, reject) {
 	resolve(value);
 });
 ```
+
 ```
 Bluebird.reject(value);
 
@@ -56,7 +58,7 @@ new Bluebird(function(resolve, reject) {
 	reject(value);
 });
 ```
-## Promise serial
+## Promise sequential
 ```
 promise1.then(function(resolve1) {
 	return promise2;
